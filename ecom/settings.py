@@ -43,8 +43,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'api',
     'api.category',
-    'api.user',
     'api.product',
+    'api.user',
     'api.order',
     # 'api.payment'
 
@@ -134,7 +134,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 
-
+AUTH_USER_MODEL = "user.CustomUser"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
@@ -156,7 +156,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
-    ]
-}
 
+   ]
+}
 AUTH_USER_MODEL = "user.CustomUser"
+
+
